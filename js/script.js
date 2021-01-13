@@ -10,8 +10,29 @@ let personalMovieDB = {
     privat: false
 };
 
-let lastViewedFIlm = prompt('Odin iz poslednih prosmotrennih filmov?', '');
-let lastFilmRate = prompt('Na skolko otsenite ego?', '10'); 
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Odin is poslednih filmov?', '');
+    const b = prompt('Otsenka?', ''); 
 
-personalMovieDB.movies[lastViewedFIlm] = lastFilmRate; 
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('done'); 
+    } else {
+        console.log('Error');
+        i--; 
+    }
+}
+
+if (personalMovieDB.count < 10) {
+    console.log('Prosmotreno dovolno malo filmov');
+} else if (personalMovieDB.count >= 10 &&
+           personalMovieDB.count <=30) {
+    console.log('Vy klassicheskij zritel'); 
+} else if (personalMovieDB.count > 30) {
+    console.log('Vy kinoman');
+} else {
+    console.log('Error'); 
+}
+
+
 
