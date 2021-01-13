@@ -1,21 +1,17 @@
 "use strict"; 
 
-// const category = 'toys'; 
+let numberOfFilms = +prompt('Skolko filmov yzhe posmotreli?', '');
 
-// console.log(`https://sumurl.com/${category}`);
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [], 
+    privat: false
+};
 
-// const user = "Ivan"; 
-// // alert(`Privet ${user}`); 
+let lastViewedFIlm = prompt('Odin iz poslednih prosmotrennih filmov?', '');
+let lastFilmRate = prompt('Na skolko otsenite ego?', '10'); 
 
-let incr = 10,
-    decr = 10; 
-
-
-console.log(incr++);
-console.log(decr--); 
-
-const isChecked = true,
-      isClosed = true; 
-
-console.log(isChecked && isClosed); 
+personalMovieDB.movies[lastViewedFIlm] = lastFilmRate; 
 
